@@ -29,7 +29,7 @@ public class AuthController extends HttpServlet {
         if (authService.authenticate(username, password)) {
             // Stocker l'utilisateur en session
             request.getSession().setAttribute("user", username);
-            response.sendRedirect("home.jsp"); // Page d'accueil après connexion
+            response.sendRedirect("produits"); // Page d'accueil après connexion
         } else {
             response.sendRedirect("login.jsp?error=true"); // Redirige avec un paramètre d'erreur
         }
